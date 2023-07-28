@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sayafa Düzeni</title>
+    <style>
+        #sayfa{
+            width: 500px;
+            margin: auto;
+            background-color: #ffeaa7;
+            padding: 20px;
+
+        }
+        label{
+            display:block;
+            margin-top:5px;
+        }
+        input{
+         width: 100px;
+         height: 25px;
+         font-size: 1.2em;
+        }
+        button{
+            border: none;
+            display: block;
+            margin-top: 5px;
+            width: 200px;
+            height: 50px;
+            text-align: center;
+            font-size:1.2em;
+         }
+         table{
+           background: #0984e3;
+           margin:5px;
+           width: 100%;
+           color:#fff;
+        }
+        td,th{
+           border:1px solid white;
+           border-spacing: 0px;
+        margin: 0px;
+        }
+        
+    </style>
+
+</head>
+<body>
+</head>
+<body>
+  <div id="sayfa">
+    <label>Ad:</label>    <input type="text"  id="ad">
+    <label>Soyad:</label> <input type="text"  id="soyad">
+    <label>Yaş:</label>   <input type="number"  id="yas">
+    <button id="ekle">Tabloya Ekle</button>
+  <table id="liste">
+      <tr>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Yaş</th>
+      </tr>
+  </table>
+  </div>
+ 
+   
+    <script>
+    const ad=document.querySelector("#ad");
+    const soyad=document.querySelector("#soyad");
+    const yas=document.querySelector("#yas");
+    const ekle=document.querySelector("#ekle");
+    const liste=document.querySelector("#liste");
+ 
+    ekle.onclick=function(){
+      
+ 
+    
+      let tAd=document.createElement("td");
+      let tSoyad=document.createElement("td");
+      let tYas=document.createElement("td");
+ 
+      tAd.textContent=ad.value;
+      tSoyad.textContent=soyad.value;
+      tYas.textContent=yas.value;
+ 
+      
+      let tr=document.createElement("tr");
+ 
+      
+      tr.appendChild(tAd);
+      tr.appendChild(tSoyad);
+      tr.appendChild(tYas);
+ 
+      
+      liste.appendChild(tr);
+ 
+      
+      ad.value="";
+      soyad.value="";
+      yas.value="";
+ 
+      
+      ad.focus();
+    }
+    </script>
+</body>
+
+</html> 
